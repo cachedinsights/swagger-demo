@@ -1,14 +1,16 @@
 package com.stackfortech.swaggerdemo.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import io.swagger.annotations.ApiModel;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "USER")
+@ApiModel(description = "All details about the user")
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String email;
